@@ -109,8 +109,5 @@
       }
     }
   },
-  "defaultProject": "kenjo-challenge-frontend",
-  "cli": {
-    "analytics": "9f812191-31c9-4e0d-827c-64e5c2dcba58"
-  }
+  "defaultProject": "kenjo-challenge-frontend"
 }
