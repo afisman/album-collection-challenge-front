@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NewAlbumDialog } from 'src/app/new-album-dialog/new-album.dialog';
+import { AlbumUpdateDialog } from './album-update-dialog/album-update-dialog';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,17 @@ import { NewAlbumDialog } from 'src/app/new-album-dialog/new-album.dialog';
 })
 export class AppComponent implements OnInit {
   title = 'kenjo-challenge-frontend';
-  constructor( public dialog: MatDialog )  {}
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   openDialogNewAlbum() {
-    this.dialog.open(NewAlbumDialog, { data: {test : true}});
+    this.dialog.open(NewAlbumDialog, { data: { test: true } });
+  }
+
+  openDialogUpdateAlbum() {
+    this.dialog.open(AlbumUpdateDialog, { data: { test: true } })
   }
 
 }
