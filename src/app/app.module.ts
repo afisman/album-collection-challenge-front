@@ -8,8 +8,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+
 
 import { AlbumListComponent } from './album-list/album-list.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -30,6 +32,7 @@ import { AlbumUpdateDialog } from './album-update-dialog/album-update-dialog';
     MatInputModule,
     MatCardModule,
     MatIconModule,
+    MatToolbarModule,
     FormsModule,
     HttpClientModule,
     MatDialogModule,
@@ -38,9 +41,7 @@ import { AlbumUpdateDialog } from './album-update-dialog/album-update-dialog';
     }
     ]),
   ],
-  providers: [
-    // MatDialogRef
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
