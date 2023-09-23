@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+
 @Component({
     selector: 'album-update-dialog',
     templateUrl: 'album-update-dialog.html',
@@ -8,14 +10,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 
 export class AlbumUpdateDialog implements OnInit {
-    album = {
-        title: '',
-        year: 1900,
-        artist: '',
-        photoUrl: ''
-    };
+    public album: any;
 
-    constructor(private http: HttpClient) { }
+
+
+    constructor(
+        @Inject(MAT_DIALOG_DATA) public data: { album: Object },
+        private http: HttpClient) { }
 
     ngOnInit(): void { }
 

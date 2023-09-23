@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AlbumUpdateDialog } from '../album-update-dialog/album-update-dialog';
 
 @Component({
@@ -11,9 +11,12 @@ import { AlbumUpdateDialog } from '../album-update-dialog/album-update-dialog';
 export class AlbumListComponent implements OnInit {
   albumList: Array<any> = [];
 
-  constructor(public http: HttpClient) { }
+  constructor(
+    public dialog: MatDialog,
+    private http: HttpClient) { }
 
   ngOnInit(): void {
+
     this.http.get<any[]>('http://localhost:3000/album').subscribe((data: Array<any>) => {
       this.albumList = data;
       console.log(this.albumList);
@@ -26,7 +29,14 @@ export class AlbumListComponent implements OnInit {
     this.http.get<any[]>(`http://localhost:3000/album/update/${album._id}`).subscribe();
   }
 
+  openDialogUpdateAlbum(album: any) {
 
+    this.http.get<any[]>(`http://localhost:3000/album/update/${album._id}`).subscribe((data: Object) => {
+
+      const dialogRef = this.dialog.open(AlbumUpdateDialog, { data: data });
+      dialogRef.componentInstance.album = data;
+    });
+  }
 
 
   deleteAlbum(album: any, i: number) {

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NewAlbumDialog } from 'src/app/new-album-dialog/new-album.dialog';
-import { AlbumUpdateDialog } from './album-update-dialog/album-update-dialog';
 
 @Component({
   selector: 'app-root',
@@ -19,8 +18,5 @@ export class AppComponent implements OnInit {
     this.dialog.open(NewAlbumDialog, { data: { test: true } });
   }
 
-  openDialogUpdateAlbum() {
-    this.dialog.open(AlbumUpdateDialog, { data: { test: true } })
-  }
 
 }

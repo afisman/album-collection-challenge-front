@@ -9,17 +9,19 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 import { AlbumListComponent } from './album-list/album-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewAlbumDialog } from 'src/app/new-album-dialog/new-album.dialog';
+import { AlbumUpdateDialog } from './album-update-dialog/album-update-dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlbumListComponent,
     NewAlbumDialog,
+    AlbumUpdateDialog,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +36,11 @@ import { NewAlbumDialog } from 'src/app/new-album-dialog/new-album.dialog';
     RouterModule.forRoot([{
       path: '', component: AlbumListComponent
     }
-  ]),
-],
-  providers: [],
+    ]),
+  ],
+  providers: [
+    // MatDialogRef
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
