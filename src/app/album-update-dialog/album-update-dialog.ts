@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { HttpClient } from '@angular/common/http';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
     selector: 'album-update-dialog',
@@ -21,8 +21,7 @@ export class AlbumUpdateDialog implements OnInit {
     ngOnInit(): void { }
 
     updateAlbum(album: any) {
-        this.http.put(`http://localhost:3000/album/update/${album._id}`, album).subscribe(
-        );
+        this.http.put(`http://localhost:3000/album/update/${album._id}`, album).subscribe();
     }
 
 }

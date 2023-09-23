@@ -9,20 +9,28 @@
         <mat-icon class="edit-icon">delete</mat-icon>
       </button>
     </div>
-    <img [src]="album.photoUrl" alt="title" width="100">
-    <mat-form-field>
+    <img [src]="album.photoUrl" alt="title" width="100" class="album-img">
+    <mat-form-field class="album-field">
       <mat-label for="albumSearch">
         Title
       </mat-label>
       <input matInput #input="matInput" name="title" [ngModel]="album.title" type="text">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="album-field">
       <mat-label>Year</mat-label>
       <input matInput name="artist" [ngModel]="album.year" type="text">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="album-field">
       <mat-label>Artist</mat-label>
       <input matInput name="artist" [ngModel]="album.artist" type="text">
+    </mat-form-field>
+    <!-- <div class="star w-50 rating-star">
+      <ngx-star-rating [id]="'rating'"></ngx-star-rating>
+    </div> -->
+    <album-rating [album]="album"></album-rating>
+    <mat-form-field class="album-field">
+      <mat-label>Average score</mat-label>
+      <input matInput name="score" [ngModel]="album.score" type="text">
     </mat-form-field>
   </mat-card>
 </div>

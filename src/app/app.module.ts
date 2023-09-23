@@ -10,13 +10,16 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
-import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 import { AlbumListComponent } from './album-list/album-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewAlbumDialog } from 'src/app/new-album-dialog/new-album.dialog';
 import { AlbumUpdateDialog } from './album-update-dialog/album-update-dialog';
+import { RatingComponent } from './album-rating/album-rating.component';
+
+
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import { AlbumUpdateDialog } from './album-update-dialog/album-update-dialog';
     AlbumListComponent,
     NewAlbumDialog,
     AlbumUpdateDialog,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,14 @@
 .main-body {
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
-    justify-self: center;
-    justify-content: center;
-    align-items: center;
-    max-width: 90%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .album-container {
@@ -18,22 +18,55 @@
   flex-direction: column;
   align-items: center;
   width: 300px;
+  height: auto;
   border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.album-img {
+  width: 100%;
+  height: 50vh;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.album-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .album-actions {
   align-self: end;
+  position: absolute;
+  top: 30px;
 }
 
 .edition-button {
-  background-color: #c0f4e4;
+  // background-color: #c0f4e4;
+  background-color: #a5e0cef3;
   margin-right: 5px;
   border-radius: 20px;
   padding: 2px;
-  border: 1px solid #c9c8c8
+  border: 1px solid white
+}
+
+.edition-button:hover {
+  color: #a5e0cef3;
+  background-color: white;
+  padding: 1px;
+  border: 1px solid #a5e0cef3
 }
 
 .edit-icon {
   position: relative;
   top: -4px;
+}
+
+label.star[_ngcontent-mbm-c48] {
+  float: right;
+  padding: 10px;
+  color: #444;
+  transition: all .2s;
 }

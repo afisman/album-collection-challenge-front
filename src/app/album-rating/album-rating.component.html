@@ -1,0 +1,6 @@
+<div class="album-ratings">
+    <mat-icon *ngFor="let icon of maxRatingArr; let index=index;" (mouseenter)="HandleMouseEnter(index)"
+        (mouseleave)="HandleMouseLeave()" (click)="Rating(index, album)" [ngClass]="{checked:SelectedStar>index}">
+        star
+    </mat-icon>
+</div>

@@ -1,7 +1,0 @@
-<div class="album-ratings">
-    <mat-toolbar color="primary"></mat-toolbar>
-    <mat-icon *ngFor="let icon of maxRatingArr; let index=index;" (mouseEnter)="HandleMouseEnter(index)"
-        [ngClass]="{checked:SelectedStar>index" }>
-        star
-    </mat-icon>
-</div>
