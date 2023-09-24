@@ -11,8 +11,11 @@ export class NewAlbumDialog implements OnInit {
     title: '',
     year: 1900,
     artist: '',
-    photoUrl: ''
+    photoUrl: '',
+    genre: 'Other'
   };
+  genres: Array<string> = ['Rock', 'Jazz', 'Classical', 'Latin', 'Techno', 'Other'];
+
 
   constructor(private http: HttpClient) { }
 

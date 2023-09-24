@@ -12,11 +12,17 @@
     </mat-form-field>
     <mat-form-field>
         <mat-label>Year</mat-label>
-        <input matInput name="artist" [(ngModel)]="album.year" type="text">
+        <input matInput name="year" [(ngModel)]="album.year" type="text">
     </mat-form-field>
     <mat-form-field>
         <mat-label>Artist</mat-label>
         <input matInput name="artist" [(ngModel)]="album.artist" type="text">
+    </mat-form-field>
+    <mat-form-field class="genre-dropdown">
+        <mat-select [(value)]="album.genre">
+            <mat-option *ngFor="let genre of genres" [(ngModel)]="album.genre" ngDefaultControl name="genre"
+                [value]="genre">{{genre}}</mat-option>
+        </mat-select>
     </mat-form-field>
     <div class="album-actions">
         <button class="confirm-button" mat-raised-button mat-dialog-close (click)="updateAlbum(album)">Confirm</button>

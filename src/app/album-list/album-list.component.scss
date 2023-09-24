@@ -5,10 +5,16 @@
   justify-self: center;
   justify-content: center;
   align-items: center;
-  max-width: 90%;
-  flex-direction: row;
+  width: 90%;
+  flex-direction: column;
   flex-wrap: wrap;
   margin-top: 40px;
+}
+
+.app-menu-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
 }
 
 .album-container {
@@ -21,6 +27,15 @@
   height: auto;
   border: 1px solid grey;
   border-radius: 5px;
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .album-img {
@@ -45,7 +60,7 @@
 
 .edition-button {
   // background-color: #c0f4e4;
-  background-color: #a5e0cef3;
+  background-color: #59C697;
   margin-right: 5px;
   border-radius: 20px;
   padding: 2px;
@@ -53,7 +68,7 @@
 }
 
 .edition-button:hover {
-  color: #a5e0cef3;
+  color: #59C697;
   background-color: white;
   padding: 1px;
   border: 1px solid #a5e0cef3
@@ -69,4 +84,53 @@ label.star[_ngcontent-mbm-c48] {
   padding: 10px;
   color: #444;
   transition: all .2s;
+}
+
+.genre-btn {
+  margin: 3px;
+}
+
+.search-bar {
+  align-self: center;
+  width: 300px;
+  height: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 2px;
+  text-align: center;
+  border: 1px solid #59C697;
+}
+
+.search-bar::placeholder {
+  font-size: 1rem;
+  padding-left: 5px;
+  text-align: center;
+}
+
+.active {
+  background-color: #59C697;
+  border: 1px solid white;
+  color: white;
+}
+
+@media screen and (max-width : 560px) {
+  .main-body {
+    width: 100%;
+  }
+
+  .app-menu-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .album-container {
+    margin: 10px;
+    width: 90%;
+    height: auto;
+  }
+
+  .buttons-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

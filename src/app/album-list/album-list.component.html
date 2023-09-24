@@ -1,36 +1,52 @@
 <div class="main-body">
+  <div class="search-bar-container">
+    <!-- <input matInput #input="matInput" type="text" placeholder="Search by KeyWord" class="search-bar"
+      [(ngModel)]="filterText" (keypress)="handleKeyboardEvent($event)" (keydown)="handleDeletEvent($event)"> -->
+    <input matInput #input="matInput" type="text" placeholder="Search by KeyWord" class="search-bar"
+      [(ngModel)]="filterText" (input)="handleKeyboardEvent($event)" (keydown)="handleDeletEvent($event)">
+
+  </div>
+  <div class="buttons-container">
+    <button mat-raised-button *ngFor="let genre of genres" (click)="getFilteredAlbums(genre)" class="genre-btn"
+      [ngClass]="{active: currentGenre===genre}">{{genre}}</button>
+    <button mat-raised-button (click)="getAllAlbums()" class="genre-btn"
+      [ngClass]="{active: currentGenre==='All'}">All</button>
+  </div>
   <!-- Album component -->
-  <mat-card class="album-container" *ngFor="let album of albumList; let i = index">
-    <div class="album-actions">
-      <button class="edition-button" mat-mini-fab (click)="openDialogUpdateAlbum(album)">
-        <mat-icon class="edit-icon">edit</mat-icon>
-      </button>
-      <button class="edition-button" mat-mini-fab (click)="deleteAlbum(album, i)">
-        <mat-icon class="edit-icon">delete</mat-icon>
-      </button>
-    </div>
-    <img [src]="album.photoUrl" alt="title" width="100" class="album-img">
-    <mat-form-field class="album-field">
-      <mat-label for="albumSearch">
-        Title
-      </mat-label>
-      <input matInput #input="matInput" name="title" [ngModel]="album.title" type="text">
-    </mat-form-field>
-    <mat-form-field class="album-field">
-      <mat-label>Year</mat-label>
-      <input matInput name="artist" [ngModel]="album.year" type="text">
-    </mat-form-field>
-    <mat-form-field class="album-field">
-      <mat-label>Artist</mat-label>
-      <input matInput name="artist" [ngModel]="album.artist" type="text">
-    </mat-form-field>
-    <!-- <div class="star w-50 rating-star">
-      <ngx-star-rating [id]="'rating'"></ngx-star-rating>
-    </div> -->
-    <album-rating [album]="album"></album-rating>
-    <mat-form-field class="album-field">
-      <mat-label>Average score</mat-label>
-      <input matInput name="score" [ngModel]="album.score" type="text">
-    </mat-form-field>
-  </mat-card>
+  <div class="app-menu-container">
+
+    <mat-card class="album-container" *ngFor="let album of albumList; let i = index">
+      <div class="album-actions">
+        <button class="edition-button" mat-mini-fab (click)="openDialogUpdateAlbum(album)">
+          <mat-icon class="edit-icon">edit</mat-icon>
+        </button>
+        <button class="edition-button" mat-mini-fab (click)="deleteAlbum(album, i)">
+          <mat-icon class="edit-icon">delete</mat-icon>
+        </button>
+      </div>
+      <img [src]="album.photoUrl" alt="title" width="100" class="album-img">
+      <mat-form-field class="album-field">
+        <mat-label for="albumSearch">
+          Title
+        </mat-label>
+        <input matInput #input="matInput" name="title" [ngModel]="album.title" type="text">
+      </mat-form-field>
+      <mat-form-field class="album-field">
+        <mat-label>Year</mat-label>
+        <input matInput name="artist" [ngModel]="album.year" type="text">
+      </mat-form-field>
+      <mat-form-field class="album-field">
+        <mat-label>Artist</mat-label>
+        <input matInput name="artist" [ngModel]="album.artist" type="text">
+      </mat-form-field>
+      <!-- <div class="star w-50 rating-star">
+        <ngx-star-rating [id]="'rating'"></ngx-star-rating>
+      </div> -->
+      <album-rating [album]="album"></album-rating>
+      <mat-form-field class="album-field">
+        <mat-label>Average score</mat-label>
+        <input matInput name="score" [ngModel]="album.score" type="text">
+      </mat-form-field>
+    </mat-card>
+  </div>
 </div>

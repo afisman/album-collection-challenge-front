@@ -12,6 +12,8 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class AlbumUpdateDialog implements OnInit {
     public album: any;
 
+    genres: Array<string> = ['Rock', 'Jazz', 'Classical', 'Latin', 'Techno', 'Other'];
+
 
 
     constructor(
@@ -21,7 +23,12 @@ export class AlbumUpdateDialog implements OnInit {
     ngOnInit(): void { }
 
     updateAlbum(album: any) {
-        this.http.put(`http://localhost:3000/album/update/${album._id}`, album).subscribe();
+        console.log(album)
+        this.http.put(`http://localhost:3000/album/update/${album._id}`, album).subscribe(
+            (data: any) => {
+                console.log(data);
+            }
+        );
     }
 
 }
